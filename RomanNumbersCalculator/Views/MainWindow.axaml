@@ -3,11 +3,10 @@
         xmlns:vm="using:RomanNumbersCalculator.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="200" d:DesignHeight="300"
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="400"
         x:Class="RomanNumbersCalculator.Views.MainWindow"
-		Height="300"
-		Width="200"
-		Background="LightYellow"
+		Height="400"
+		Width="300"
         Icon="/Assets/avalonia-logo.ico"
         Title="RomanNumbersCalculator">
 
@@ -15,22 +14,12 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 	<Window.Styles>
-		<Style Selector="Button.h1">
-			<Setter Property="VerticalAlignment" Value="Stretch"/>
-			<Setter Property="HorizontalAlignment" Value="Stretch"/>
-			<Setter Property="VerticalContentAlignment" Value="Center"/>
-			<Setter Property="HorizontalContentAlignment" Value="Center"/>
-			<Setter Property="CornerRadius" Value="0"/>
-			<Setter Property="FontSize" Value="20"/>
-			<Setter Property="Height" Value="55"/>
-			<Setter Property="Width" Value="45"/>
-			<Setter Property="Margin" Value="2"/>
-		</Style>
+		<StyleInclude Source="/Assets/CustomStyle.axaml"/>
 	</Window.Styles>
 
-	<Grid ColumnDefinitions="1*" RowDefinitions="1*,4*" Margin="2">
+	<Grid ColumnDefinitions="1*" RowDefinitions="1*,4*">
 		<StackPanel Grid.Row="0" Grid.Column="0">
-			<TextBlock Name="textResult" Text="{Binding CurrentNumberStringRepresentation}" FontSize="40" Height="50" ></TextBlock>
+			<TextBlock Name="textResult" Text="{Binding CurrentNumberStringRepresentation}"></TextBlock>
 		</StackPanel>
 		<Grid ColumnDefinitions="3*,1*" RowDefinitions="1*" Grid.Row="1" Grid.Column="0">
 			<Grid ColumnDefinitions="1*,1*,1*" RowDefinitions="1*,1*,1*,1*" Grid.Row="0" Grid.Column="0">
@@ -47,7 +36,7 @@
 				<Button Name="buttonCE" Content="CE" Command="{Binding ResetCommand}" Grid.Row="3" Grid.Column="1" Classes="h1">CE</Button>
 				<Button Name="buttonDiv" Content="/" Command="{Binding DivCommand}" Grid.Row="3" Grid.Column="2" Classes="h1">/</Button>
 			</Grid>
-			<Button Name="buttonResult" Content="=" Command="{Binding CalculateCommand}" Height="235" Width="50" Grid.Row="0" Margin="2" Grid.Column="1">=</Button>
+			<Button Name="buttonResult" Content="=" Command="{Binding CalculateCommand}"  Grid.Row="0" Margin="2" Grid.Column="1" Classes="bEquals">=</Button>
 		</Grid>
 	</Grid>
 </Window>

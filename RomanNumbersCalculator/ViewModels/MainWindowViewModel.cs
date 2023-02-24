@@ -1,12 +1,7 @@
-using System;
 using ReactiveUI;
 using RomanNumbersCalculator.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reactive;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace RomanNumbersCalculator.ViewModels
 {
@@ -14,8 +9,7 @@ namespace RomanNumbersCalculator.ViewModels
     {
         private string currentOperationStringRepresentation = "";
         private string currentNumberStringRepresentation = "";
-        private Stack<RomanNumberExtend> StackRomanNumbers = new Stack<RomanNumberExtend>();
-
+        private Stack<RomanNumberExtend> stackRomanNumbers = new Stack<RomanNumberExtend>();
         public string CurrentNumberStringRepresentation
         {
             get => currentNumberStringRepresentation;
@@ -38,7 +32,7 @@ namespace RomanNumbersCalculator.ViewModels
                 if (currentOperationStringRepresentation == "=")
                 {
                     CurrentNumberStringRepresentation = str;
-                    StackRomanNumbers.Clear();
+                    stackRomanNumbers.Clear();
                     currentOperationStringRepresentation = "";
                 }
                 else
@@ -68,7 +62,7 @@ namespace RomanNumbersCalculator.ViewModels
                             {
                                 currentOperationStringRepresentation = "+";
                                 RomanNumberExtend newNumber = new RomanNumberExtend(currentNumberStringRepresentation);
-                                StackRomanNumbers.Push(newNumber);
+                                stackRomanNumbers.Push(newNumber);
                                 CurrentNumberStringRepresentation = "";
                             }
                             else
@@ -77,16 +71,16 @@ namespace RomanNumbersCalculator.ViewModels
                                 switch (currentOperationStringRepresentation)
                                 {
                                     case "+":
-                                        StackRomanNumbers.Push(StackRomanNumbers.Pop() + newNumber);
+                                        stackRomanNumbers.Push(stackRomanNumbers.Pop() + newNumber);
                                         break;
                                     case "-":
-                                        StackRomanNumbers.Push(StackRomanNumbers.Pop() - newNumber);
+                                        stackRomanNumbers.Push(stackRomanNumbers.Pop() - newNumber);
                                         break;
                                     case "*":
-                                        StackRomanNumbers.Push(StackRomanNumbers.Pop() * newNumber);
+                                        stackRomanNumbers.Push(stackRomanNumbers.Pop() * newNumber);
                                         break;
                                     case "/":
-                                        StackRomanNumbers.Push(StackRomanNumbers.Pop() / newNumber);
+                                        stackRomanNumbers.Push(stackRomanNumbers.Pop() / newNumber);
                                         break;
                                 }
                                 currentOperationStringRepresentation = "+";
@@ -123,7 +117,7 @@ namespace RomanNumbersCalculator.ViewModels
                             {
                                 currentOperationStringRepresentation = "-";
                                 RomanNumberExtend newNumber = new RomanNumberExtend(currentNumberStringRepresentation);
-                                StackRomanNumbers.Push(newNumber);
+                                stackRomanNumbers.Push(newNumber);
                                 CurrentNumberStringRepresentation = "";
                             }
                             else
@@ -132,16 +126,16 @@ namespace RomanNumbersCalculator.ViewModels
                                 switch (currentOperationStringRepresentation)
                                 {
                                     case "+":
-                                        StackRomanNumbers.Push(StackRomanNumbers.Pop() + newNumber);
+                                        stackRomanNumbers.Push(stackRomanNumbers.Pop() + newNumber);
                                         break;
                                     case "-":
-                                        StackRomanNumbers.Push(StackRomanNumbers.Pop() - newNumber);
+                                        stackRomanNumbers.Push(stackRomanNumbers.Pop() - newNumber);
                                         break;
                                     case "*":
-                                        StackRomanNumbers.Push(StackRomanNumbers.Pop() * newNumber);
+                                        stackRomanNumbers.Push(stackRomanNumbers.Pop() * newNumber);
                                         break;
                                     case "/":
-                                        StackRomanNumbers.Push(StackRomanNumbers.Pop() / newNumber);
+                                        stackRomanNumbers.Push(stackRomanNumbers.Pop() / newNumber);
                                         break;
                                 }
                                 currentOperationStringRepresentation = "-";
@@ -178,7 +172,7 @@ namespace RomanNumbersCalculator.ViewModels
                             {
                                 currentOperationStringRepresentation = "*";
                                 RomanNumberExtend newNumber = new RomanNumberExtend(currentNumberStringRepresentation);
-                                StackRomanNumbers.Push(newNumber);
+                                stackRomanNumbers.Push(newNumber);
                                 CurrentNumberStringRepresentation = "";
                             }
                             else
@@ -187,16 +181,16 @@ namespace RomanNumbersCalculator.ViewModels
                                 switch (currentOperationStringRepresentation)
                                 {
                                     case "+":
-                                        StackRomanNumbers.Push(StackRomanNumbers.Pop() + newNumber);
+                                        stackRomanNumbers.Push(stackRomanNumbers.Pop() + newNumber);
                                         break;
                                     case "-":
-                                        StackRomanNumbers.Push(StackRomanNumbers.Pop() - newNumber);
+                                        stackRomanNumbers.Push(stackRomanNumbers.Pop() - newNumber);
                                         break;
                                     case "*":
-                                        StackRomanNumbers.Push(StackRomanNumbers.Pop() * newNumber);
+                                        stackRomanNumbers.Push(stackRomanNumbers.Pop() * newNumber);
                                         break;
                                     case "/":
-                                        StackRomanNumbers.Push(StackRomanNumbers.Pop() / newNumber);
+                                        stackRomanNumbers.Push(stackRomanNumbers.Pop() / newNumber);
                                         break;
                                 }
                                 currentOperationStringRepresentation = "*";
@@ -233,7 +227,7 @@ namespace RomanNumbersCalculator.ViewModels
                             {
                                 currentOperationStringRepresentation = "/";
                                 RomanNumberExtend newNumber = new RomanNumberExtend(currentNumberStringRepresentation);
-                                StackRomanNumbers.Push(newNumber);
+                                stackRomanNumbers.Push(newNumber);
                                 CurrentNumberStringRepresentation = "";
                             }
                             else
@@ -242,16 +236,16 @@ namespace RomanNumbersCalculator.ViewModels
                                 switch (currentOperationStringRepresentation)
                                 {
                                     case "+":
-                                        StackRomanNumbers.Push(StackRomanNumbers.Pop() + newNumber);
+                                        stackRomanNumbers.Push(stackRomanNumbers.Pop() + newNumber);
                                         break;
                                     case "-":
-                                        StackRomanNumbers.Push(StackRomanNumbers.Pop() - newNumber);
+                                        stackRomanNumbers.Push(stackRomanNumbers.Pop() - newNumber);
                                         break;
                                     case "*":
-                                        StackRomanNumbers.Push(StackRomanNumbers.Pop() * newNumber);
+                                        stackRomanNumbers.Push(stackRomanNumbers.Pop() * newNumber);
                                         break;
                                     case "/":
-                                        StackRomanNumbers.Push(StackRomanNumbers.Pop() / newNumber);
+                                        stackRomanNumbers.Push(stackRomanNumbers.Pop() / newNumber);
                                         break;
                                 }
                                 currentOperationStringRepresentation = "/";
@@ -268,7 +262,7 @@ namespace RomanNumbersCalculator.ViewModels
             });
             CalculateCommand = ReactiveCommand.Create(() =>
             {
-                if (StackRomanNumbers.Count == 1 && currentNumberStringRepresentation != "" && currentNumberStringRepresentation != "#ERROR")
+                if (stackRomanNumbers.Count == 1 && currentNumberStringRepresentation != "" && currentNumberStringRepresentation != "#ERROR")
                 {
                     try
                     {
@@ -276,20 +270,20 @@ namespace RomanNumbersCalculator.ViewModels
                         switch (currentOperationStringRepresentation)
                         {
                             case "+":
-                                StackRomanNumbers.Push(StackRomanNumbers.Pop() + newNumber);
+                                stackRomanNumbers.Push(stackRomanNumbers.Pop() + newNumber);
                                 break;
                             case "-":
-                                StackRomanNumbers.Push(StackRomanNumbers.Pop() - newNumber);
+                                stackRomanNumbers.Push(stackRomanNumbers.Pop() - newNumber);
                                 break;
                             case "*":
-                                StackRomanNumbers.Push(StackRomanNumbers.Pop() * newNumber);
+                                stackRomanNumbers.Push(stackRomanNumbers.Pop() * newNumber);
                                 break;
                             case "/":
-                                StackRomanNumbers.Push(StackRomanNumbers.Pop() / newNumber);
+                                stackRomanNumbers.Push(stackRomanNumbers.Pop() / newNumber);
                                 break;
                         }
                         currentOperationStringRepresentation = "=";
-                        CurrentNumberStringRepresentation = StackRomanNumbers.Peek().ToString();
+                        CurrentNumberStringRepresentation = stackRomanNumbers.Peek().ToString();
                     }
                     catch (RomanNumberException ex)
                     {
@@ -299,7 +293,7 @@ namespace RomanNumbersCalculator.ViewModels
             });
             ResetCommand = ReactiveCommand.Create(() => {
                 CurrentNumberStringRepresentation = "";
-                StackRomanNumbers.Clear();
+                stackRomanNumbers.Clear();
                 currentOperationStringRepresentation = "";
             });
         }

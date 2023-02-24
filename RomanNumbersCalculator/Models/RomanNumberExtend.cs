@@ -12,9 +12,9 @@ namespace RomanNumbersCalculator.Models
     {
         public RomanNumberExtend(string n) : base(n) { }
         public RomanNumberExtend(ushort n) : base(n) { }
-        public static RomanNumberExtend operator +(RomanNumberExtend RomanNumber1, RomanNumberExtend RomanNumber2) => new RomanNumberExtend((ushort)(RomanNumber1.ToUInt16() + RomanNumber2.ToUInt16()));
-        public static RomanNumberExtend operator -(RomanNumberExtend RomanNumber1, RomanNumberExtend RomanNumber2) => new RomanNumberExtend((ushort)(RomanNumber1.ToUInt16() - RomanNumber2.ToUInt16()));
-        public static RomanNumberExtend operator *(RomanNumberExtend RomanNumber1, RomanNumberExtend RomanNumber2) => new RomanNumberExtend((ushort)(RomanNumber1.ToUInt16() * RomanNumber2.ToUInt16()));
-        public static RomanNumberExtend operator /(RomanNumberExtend RomanNumber1, RomanNumberExtend RomanNumber2) => new RomanNumberExtend((ushort)(RomanNumber1.ToUInt16() / RomanNumber2.ToUInt16()));
+        public static RomanNumberExtend operator +(RomanNumberExtend RomanNumber1, RomanNumberExtend RomanNumber2) => new RomanNumberExtend((ushort)(RomanNumber1.ToUInt() + RomanNumber2.ToUInt()));
+        public static RomanNumberExtend operator -(RomanNumberExtend RomanNumber1, RomanNumberExtend RomanNumber2) => new RomanNumberExtend((ushort)(RomanNumber1.ToUInt() - RomanNumber2.ToUInt()));
+        public static RomanNumberExtend operator *(RomanNumberExtend RomanNumber1, RomanNumberExtend RomanNumber2) => new RomanNumberExtend((ushort)(RomanNumber1.ToUInt() * RomanNumber2.ToUInt()));
+        public static RomanNumberExtend operator /(RomanNumberExtend RomanNumber1, RomanNumberExtend RomanNumber2) => new RomanNumberExtend((ushort)(RomanNumber1.ToUInt() / RomanNumber2.ToUInt()));
     }
 }
